@@ -1,0 +1,28 @@
+{
+	"price":"270.000",
+	"rooms":4,
+	"toilets":2,
+	"meters":165,
+	"coments": "2ª planta, buen estado, de 30 a 50 años de antigüedad", 
+	"images": [
+	  {"url": "http://images.inmofactory.com/inmofactory/documents/1/96332/7211039/44822992.jpg/w_0/c_690x518/p_1/"},
+	  {"url": "http://images.inmofactory.com/inmofactory/documents/1/96332/7211039/44822979.jpg/w_0/c_690x518/p_1/"},
+	  {"url": "http://images.inmofactory.com/inmofactory/documents/1/96332/7211039/44822982.jpg/w_0/c_690x518/p_1/"}
+	  ],
+	 "Extras": [
+	 		{"item":"Armarios"},
+	 		{"item":"Ascensor"},
+	 		{"item":"Calefacción"},
+	 		{"item":"Cocina Equipada"},
+	 		{"item":"Gres Cerámica"},
+	 		{"item":"Parking comunitario"},
+	 ],
+	 "Features": [
+	 		{"item":"Piso"},
+	 		{"item":"Venta"},
+	 		{"item":"Buen estado"},
+	 		{"item":"De 30 a 50 años de antigüedad"},
+	 ],
+	 "Description": "Piso de unos 137(plano)metros utiles. 4 habitaciones. 2 baños, 1 aseo. Salon independiente. Cocina sin amueblar. Calefaccion central. Terraza 16 metros. 9 alturas, 2 pisos por planta. Orientacion sur-oeste. Todo exterior. Para reformar. CON garaje. CON ascensor. CON 2 empotrados. Carpinterias: interior sapely, exterior aluminio. Suelos parquet. Portero fisico. Año: 1971."
+	 },    
+} 
