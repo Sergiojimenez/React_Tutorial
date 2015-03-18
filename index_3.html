@@ -1,0 +1,73 @@
+ <!-- index.html -->
+<html>
+  <head>
+    <title>Hello React</title>
+    <script src="https://fb.me/react-0.13.1.js"></script>
+    <script src="https://fb.me/JSXTransformer-0.13.1.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.0.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
+  </head>
+  <body>
+    <div id="content">
+    </div>
+    <script type="text/jsx">
+
+var Addata = React.createClass({
+      render: function() {
+        var alerta = this.props.data.map(function (comment) {
+          return (
+          <div className="comment">
+              <div class="price">{comment.price}</div>
+              <div class="rooms">{comment.rooms}</div>
+              <div class="toilets">{comment.toilets}</div>
+              <a class="toilets">{comment.img}</a>
+          </div>
+          );
+        });
+      return (
+         <div className="commentList">
+          {alerta}
+        </div>
+    );
+   } 
+});
+
+var DetailPage = React.createClass({
+    loadComments: function() {
+      $.ajax({
+          url: this.props.url,
+          dataType: 'json',
+          success: function(data) {
+            this.setState({data: data});
+          }.bind(this),
+          error: function(xhr, status, err) {
+            console.error(this.props.url, status, err.toString());
+          }.bind(this)
+      });
+    },
+    getInitialState: function() {
+      return {data: []};
+    },
+    componentDidMount: function() {
+      this.loadComments();
+      setInterval(this.loadComments, this.props.pollInterval);
+    },
+    render: function() {
+      return (
+        <div className="Ad">
+            <Addata data={this.state.data} />
+          </div>
+      );
+    }
+});
+
+React.render(
+  <DetailPage url="comments.json" pollInterval={2000} />, 
+    document.getElementById('content')
+);
+
+    </script>
+  </body>
+</html>
+
+

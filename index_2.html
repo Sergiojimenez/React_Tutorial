@@ -8,37 +8,29 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
   </head>
   <body>
-    <div id="content"></div>
+    <div id="content">
+     <!-- index.html -->
+
+      /* */
+
+    </div>
     <script type="text/jsx">
 
-
- 
-  var CommentList = React.createClass({
-  render: function() {
-    var commentNodes = this.props.data.map(function (comment) {
-      return (
-        <Comment price={comment.price}>
-          {comment.rooms}
-          {comment.toilets}
-        </Comment>
-      );
-    });
-    return (
-      <div className="commentList">
-        {commentNodes}
-      </div>
-    );
-  }
-});
-
-    var CommentForm = React.createClass({
-      render: function() {
+    var AdsList = React.createClass({
+    render: function() {
+      var commentNodes = this.props.data.map(function (comment) {
         return (
-          <div className="commentForm">
-            Hello, world! I am a CommentForm.
-          </div>
+          <Comment price={comment.price} rooms={comment.rooms}>
+            {comment.toilets}
+          </Comment>
         );
-      }
+      });
+      return (
+        <div className="commentList">
+          {commentNodes}
+        </div>
+      );
+    }
     });
 
     var converter = new Showdown.converter();
@@ -49,14 +41,26 @@
           <div className="comment">
             <h2 className="commentAuthor">
               {this.props.price}
+              {this.props.rooms}
             </h2>
               <span dangerouslySetInnerHTML={{__html: rawMarkup}} />
             </div>
         );
       }
     });
+ 
 
-var CommentBox = React.createClass({
+    var CommonFooter = React.createClass({
+      render: function() {
+        return (
+          <div className="CommonFooter">
+            Hello, world! I am a CommonFooter.
+          </div>
+        );
+      }
+    });
+
+var DetailPage = React.createClass({
   loadCommentsFromServer: function() {
     $.ajax({
       url: this.props.url,
@@ -78,17 +82,17 @@ var CommentBox = React.createClass({
   },
   render: function() {
     return (
-      <div className="commentBox">
-        <h1>Comments</h1>
-        <CommentList data={this.state.data} />
-        <CommentForm />
+      <div className="Ad">
+        <h1>House</h1>
+        <AdsList data={this.state.data} />
+        <CommonFooter />
       </div>
     );
   }
 });
 
 React.render(
-  <CommentBox url="comments.json" pollInterval={2000} />,
+  <DetailPage url="comments.json" pollInterval={2000} />,
   document.getElementById('content')
 );
 

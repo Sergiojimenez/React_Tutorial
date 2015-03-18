@@ -1,10 +1,21 @@
 [
     {
-        "price": "25000",
-        "rooms": "4"
+        "price":"270.000",
+		"rooms":4,
+		"toilets":2,
+		"meters":165,
+		"coments": "2ª planta, buen estado, de 30 a 50 años de antigüedad",
+		"img": [
+		  {"url": "http://images.inmofactory.com/inmofactory/documents/1/96332/7211039/44822992.jpg/w_0/c_690x518/p_1/"},
+		  {"url": "http://images.inmofactory.com/inmofactory/documents/1/96332/7211039/44822979.jpg/w_0/c_690x518/p_1/"},
+		  {"url": "http://images.inmofactory.com/inmofactory/documents/1/96332/7211039/44822982.jpg/w_0/c_690x518/p_1/"}
+		  ]
     },
     {
-        "price": "Sergio",
-         "rooms": "4"
-    }
-]
+        "price":"270.000",
+		"rooms":4,
+		"toilets":2,
+		"meters":165,
+		"coments": "2ª planta, buen estado, de 30 a 50 años de antigüedad"    
+	 }
+] 
